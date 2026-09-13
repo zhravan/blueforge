@@ -4,27 +4,42 @@
 
 Discover. Inspect. Decode. Test. Replay.
 
-BlueForge is designed as a vendor-neutral developer workbench for Bluetooth Low Energy: GATT exploration, packet inspection, protocol decoding, automated tests, session recording and replay.
+BlueForge is a vendor-neutral developer workbench for Bluetooth Low Energy: GATT exploration, packet inspection, protocol decoding, automated tests, session recording and replay.
 
-## Status
+## Current capabilities
 
-Early development — the current release contains the application shell, mock BLE adapter, GATT explorer UI, protocol decoder foundation, and test/session domain models. Native OS BLE adapters are intentionally isolated behind `ble-core`.
+- React/Vite developer workspace
+- Mock BLE adapter for deterministic development
+- Real browser BLE transport via Web Bluetooth where supported
+- GATT service/characteristic exploration
+- Read/write/notification interaction model
+- Packet log and live notification view
+- Protocol decoder foundation
+- BLE test/session domain models
+- GitHub Actions CI foundation
 
 ## Architecture
 
 ```text
-React UI → Application layer → Domain packages → BLE abstraction → OS adapter
+UI → application workflows → domain packages → BleAdapter → transport
+                                      ├──────────── mock
+                                      └──────────── Web Bluetooth
 ```
+
+The `BleAdapter` contract is deliberately transport-neutral so native desktop adapters can be added without rewriting the application layer.
 
 ## Development
 
 ```bash
 npm install
 npm run typecheck
-npm run test
+npm test
+npm run build
 ```
 
-See `docs/architecture.md` and `docs/roadmap.md`.
+## Roadmap
+
+See `docs/roadmap.md` for the implementation plan. The next major milestone is native cross-platform BLE plus persistence, followed by the protocol editor, automated test runner, replay and CLI.
 
 ## License
 
