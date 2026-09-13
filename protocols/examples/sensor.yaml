@@ -1,0 +1,13 @@
+name: Furrever Sensor Protocol
+version: 1
+endianness: little
+fields:
+  - name: version
+    type: uint8
+  - name: temperature
+    type: int16
+    scale: 0.01
+    unit: °C
+  - name: battery
+    type: uint8
+    unit: '%'
