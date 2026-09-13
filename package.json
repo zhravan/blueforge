@@ -1,0 +1,1 @@
+{"name":"blueforge","private":true,"version":"0.1.0","description":"Open-source BLE development and testing platform","workspaces":["apps/*","packages/*"],"scripts":{"build":"npm run build -ws","test":"npm run test -ws","typecheck":"npm run typecheck -ws"},"engines":{"node":">=20"}}
