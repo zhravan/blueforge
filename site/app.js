@@ -1,4 +1,4 @@
-import {MockBleAdapter,WebBluetoothAdapter} from '../packages/ble-core/src/index.ts';
+import {MockBleAdapter,WebBluetoothAdapter} from './ble-adapter.js';
 
 const $=id=>document.getElementById(id);const state={adapter:new MockBleAdapter(),mode:'mock',devices:new Map(),selected:null,services:[],characteristic:null,unsubscribe:null,packets:[],ads:[],sessions:JSON.parse(localStorage.getItem('blueforge.sessions')||'[]'),protocol:localStorage.getItem('blueforge.protocol')||'',events:0};
 const views=['overview','scan','devices','diagnostics','multi','packets','protocol','tests','sessions','settings'];
